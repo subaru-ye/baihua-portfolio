@@ -1,6 +1,6 @@
 export type SkillItem = {
   name: string
-  level: '掌握' | '熟悉' | '了解'
+  level: '\u638c\u63e1' | '\u719f\u6089' | '\u4e86\u89e3'
 }
 
 export type SkillGroup = {
@@ -10,41 +10,41 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: '后端',
+    category: '\u540e\u7aef',
     items: [
-      { name: 'Java', level: '掌握' },
-      { name: 'Spring Boot', level: '熟悉' },
-      { name: 'MyBatis', level: '熟悉' },
-      { name: 'MySQL', level: '熟悉' },
-      { name: 'Redis', level: '了解' },
+      { name: 'Java', level: '\u638c\u63e1' },
+      { name: 'Spring Boot', level: '\u719f\u6089' },
+      { name: 'MyBatis', level: '\u719f\u6089' },
+      { name: 'MySQL', level: '\u719f\u6089' },
+      { name: 'Redis', level: '\u4e86\u89e3' },
     ],
   },
   {
-    category: '前端',
+    category: '\u524d\u7aef',
     items: [
-      { name: 'HTML', level: '熟悉' },
-      { name: 'CSS', level: '熟悉' },
-      { name: 'JavaScript', level: '熟悉' },
-      { name: 'TypeScript', level: '熟悉' },
-      { name: 'React', level: '熟悉' },
+      { name: 'HTML', level: '\u719f\u6089' },
+      { name: 'CSS', level: '\u719f\u6089' },
+      { name: 'JavaScript', level: '\u719f\u6089' },
+      { name: 'TypeScript', level: '\u719f\u6089' },
+      { name: 'React', level: '\u719f\u6089' },
     ],
   },
   {
-    category: '工程化与工具',
+    category: '\u5de5\u7a0b\u5316 / \u5de5\u5177',
     items: [
-      { name: 'Git', level: '熟悉' },
-      { name: 'Linux', level: '熟悉' },
-      { name: 'Docker', level: '了解' },
-      { name: 'Postman', level: '熟悉' },
-      { name: 'Maven', level: '熟悉' },
+      { name: 'Git', level: '\u719f\u6089' },
+      { name: 'Linux', level: '\u719f\u6089' },
+      { name: 'Docker', level: '\u4e86\u89e3' },
+      { name: 'Postman', level: '\u719f\u6089' },
+      { name: 'Maven', level: '\u719f\u6089' },
     ],
   },
   {
-    category: '其他语言与方向',
+    category: '\u5176\u4ed6\u8bed\u8a00 / \u6269\u5c55\u65b9\u5411',
     items: [
-      { name: 'Python', level: '了解' },
-      { name: 'Go', level: '了解' },
-      { name: 'Node.js', level: '了解' },
+      { name: 'Python', level: '\u4e86\u89e3' },
+      { name: 'Go', level: '\u4e86\u89e3' },
+      { name: 'Node.js', level: '\u4e86\u89e3' },
     ],
   },
 ]

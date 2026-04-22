@@ -1,28 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #111111;
-  --color-surface: #171717;
-  --color-surface-strong: #1f1f1f;
-  --color-foreground: #ffffff;
-  --color-muted: #a3a3a3;
-  --color-muted-strong: #d4d4d4;
-  --color-line: #ffffff14;
-  --color-accent: #22d3ee;
-  --color-accent-strong: #38bdf8;
-  --color-accent-soft: #0f172a;
+  --color-ink: #060708;
+  --color-ink-soft: #0b0d0e;
+  --color-foreground: #f4f7f7;
+  --color-muted: #8f999b;
+  --color-muted-strong: #cdd5d6;
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-accent: #66d9ff;
+  --color-accent-strong: #9ae7ff;
 }
 
 :root {
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
   color: var(--color-foreground);
   background:
-    radial-gradient(circle at top, rgb(34 211 238 / 0.16), transparent 28%),
-    radial-gradient(circle at 85% 15%, rgb(56 189 248 / 0.14), transparent 22%),
-    linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
-  font-family:
-    "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    sans-serif;
+    radial-gradient(circle at top left, rgba(102, 217, 255, 0.12), transparent 30%),
+    linear-gradient(180deg, #060708 0%, #050506 100%);
+  font-family: var(--font-body);
   font-synthesis: none;
   line-height: 1.5;
   font-weight: 400;
@@ -33,12 +30,16 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 92px;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(102, 217, 255, 0.12), transparent 30%),
+    linear-gradient(180deg, #060708 0%, #050506 100%);
 }
 
 * {
@@ -56,11 +57,20 @@ textarea {
   font: inherit;
 }
 
+textarea {
+  resize: vertical;
+}
+
 #root {
   min-height: 100vh;
 }
 
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.05em;
+}
+
 ::selection {
-  background: rgb(34 211 238 / 0.25);
+  background: rgba(102, 217, 255, 0.28);
   color: #ffffff;
 }

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 import { profile } from '../data/profile'
 import { skillGroups } from '../data/skills'
 
@@ -5,63 +7,67 @@ function About() {
   return (
     <section
       id="about"
-      className="grid gap-6 rounded-[2rem] border border-line bg-white/[0.03] p-6 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]"
+      className="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6 lg:px-8"
     >
-      <div className="space-y-6">
-        <div className="space-y-3">
-          <p className="text-sm uppercase tracking-[0.35em] text-accent">
-            About
+      <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="lg:sticky lg:top-28 lg:h-fit">
+          <p className="text-[11px] uppercase tracking-[0.42em] text-accent">
+            {'\u5173\u4e8e'}
           </p>
-          <h2 className="text-3xl font-semibold text-foreground">关于我</h2>
-          <p className="leading-8 text-muted">
-            这是按 PRD 初始化的基础内容结构。当前文案与项目数据均为可运行占位内容，后续只需要改
-            `src/data/` 下的数据文件即可完成内容替换。
-          </p>
-        </div>
+          <h2 className="font-display mt-4 text-4xl text-foreground sm:text-5xl">
+            {
+              '\u505a\u7a33\u5b9a\u7684\u540e\u7aef\u7cfb\u7edf\uff0c\u4e5f\u505a\u6e05\u6670\u7684\u9879\u76ee\u8868\u8fbe\u3002'
+            }
+          </h2>
+          <div className="mt-8 space-y-5 text-base leading-8 text-muted">
+            {profile.bio.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
-        <div className="rounded-3xl border border-line bg-ink-soft p-5">
-          <p className="text-sm font-medium text-foreground">教育背景</p>
-          <div className="mt-4 space-y-2 text-sm text-muted">
+          <div className="mt-10 border-t border-line/70 pt-5 text-sm leading-7 text-muted">
             <p>{profile.education.school}</p>
             <p>{profile.education.major}</p>
             <p>{profile.education.grade}</p>
           </div>
         </div>
 
-        <div className="rounded-3xl border border-line bg-ink-soft p-5">
-          <p className="text-sm font-medium text-foreground">职业目标</p>
-          <p className="mt-3 text-sm leading-7 text-muted">
-            聚焦 Java 后端工程实践，同时持续完善前端表达、工程化和多语言能力，构建完整的个人技术品牌。
-          </p>
-        </div>
-      </div>
+        <div className="space-y-10">
+          {skillGroups.map((group, index) => (
+            <motion.article
+              key={group.category}
+              className="border-t border-line/70 pt-6"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.45, delay: index * 0.06 }}
+            >
+              <div className="grid gap-5 sm:grid-cols-[170px_1fr]">
+                <div>
+                  <p className="font-display text-2xl text-foreground">
+                    {group.category}
+                  </p>
+                  <p className="mt-2 text-xs uppercase tracking-[0.35em] text-muted">
+                    {group.items.length} {'\u9879'}
+                  </p>
+                </div>
 
-      <div className="grid gap-4">
-        {skillGroups.map((group) => (
-          <article
-            key={group.category}
-            className="rounded-3xl border border-line bg-ink-soft p-5"
-          >
-            <div className="flex items-center justify-between gap-4">
-              <h3 className="text-lg font-semibold text-foreground">
-                {group.category}
-              </h3>
-              <span className="text-xs uppercase tracking-[0.25em] text-muted">
-                {group.items.length} 项
-              </span>
-            </div>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {group.items.map((item) => (
-                <span
-                  key={item.name}
-                  className="rounded-full border border-line px-3 py-2 text-sm text-muted-strong"
-                >
-                  {item.name} · {item.level}
-                </span>
-              ))}
-            </div>
-          </article>
-        ))}
+                <div className="flex flex-wrap gap-x-4 gap-y-3">
+                  {group.items.map((item) => (
+                    <span
+                      key={item.name}
+                      className="inline-flex items-center gap-2 text-sm leading-7 text-muted-strong"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                      <span>{item.name}</span>
+                      <span className="text-muted">/ {item.level}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   )

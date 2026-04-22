@@ -8,7 +8,8 @@ export type SocialLink = {
 type Profile = {
   name: string
   englishName: string
-  title: string
+  role: string
+  headline: string
   summary: string
   email: string
   education: {
@@ -16,6 +17,8 @@ type Profile = {
     major: string
     grade: string
   }
+  bio: string[]
+  focusAreas: string[]
   highlights: Array<{
     label: string
     value: string
@@ -24,44 +27,65 @@ type Profile = {
 }
 
 export const profile: Profile = {
-  name: '白桦',
+  name: '\u767d\u6866',
   englishName: 'Baihua',
-  title: '主攻 Java 后端开发，持续学习前端、多语言与工程化能力。',
+  role: 'Java \u540e\u7aef\u5f00\u53d1',
+  headline:
+    '\u4e3b\u653b Java \u540e\u7aef\u5f00\u53d1\uff0c\u4e5f\u5728\u6301\u7eed\u6253\u78e8\u524d\u7aef\u5b9e\u73b0\u3001\u5de5\u7a0b\u5316\u80fd\u529b\u4e0e\u9879\u76ee\u8868\u8fbe\u3002',
   summary:
-    '这是一个基于 React + TypeScript + Vite + Tailwind CSS 初始化的个人作品集项目，默认采用深色主题，并为关于我、作品展示、联系方式等核心模块预留了清晰的数据与组件结构。',
-  email: 'your-email@example.com',
+    '\u6211\u5e0c\u671b\u8fd9\u4efd\u4f5c\u54c1\u96c6\u4e0d\u53ea\u662f\u5c55\u793a\u6280\u672f\u6808\uff0c\u800c\u662f\u5c55\u793a\u6211\u5982\u4f55\u7406\u89e3\u9700\u6c42\uff0c\u62c6\u89e3\u95ee\u9898\uff0c\u5b9e\u73b0\u529f\u80fd\uff0c\u5e76\u628a\u6210\u679c\u6e05\u6670\u5730\u8bb2\u51fa\u6765\u3002',
+  email: '838184610@qq.com',
   education: {
-    school: '你的学校名称',
-    major: '你的专业信息',
-    grade: '你的年级 / 当前状态',
+    school:
+      '\u5728\u6821\u5927\u5b66\u751f\uff0c\u6b63\u5728\u6301\u7eed\u51c6\u5907\u5b9e\u4e60\u4e0e\u521d\u7ea7\u5f00\u53d1\u5c97\u4f4d',
+    major:
+      '\u4e3b\u7ebf\u805a\u7126 Java \u540e\u7aef\u5f00\u53d1\uff0c\u540c\u65f6\u8865\u5f3a\u524d\u7aef\u4e0e\u5de5\u7a0b\u5316\u80fd\u529b',
+    grade:
+      '\u5f53\u524d\u4ee5\u9879\u76ee\u6c89\u6dc0\uff0c\u4f5c\u54c1\u96c6\u8d28\u91cf\u4e0e\u957f\u671f\u8fed\u4ee3\u4e3a\u91cd\u70b9',
   },
+  bio: [
+    '\u6211\u5f53\u524d\u7684\u80fd\u529b\u4e3b\u7ebf\u662f Java \u540e\u7aef\u5f00\u53d1\uff0c\u5173\u6ce8\u4e1a\u52a1\u63a5\u53e3\u8bbe\u8ba1\uff0c\u6570\u636e\u7ed3\u6784\u7ec4\u7ec7\u548c\u670d\u52a1\u7a33\u5b9a\u6027\u3002',
+    '\u4e0e\u6b64\u540c\u65f6\uff0c\u6211\u4e5f\u5728\u6301\u7eed\u5b8c\u5584 React \u4e0e TypeScript \u7684\u9875\u9762\u5b9e\u73b0\u80fd\u529b\uff0c\u5e0c\u671b\u9879\u76ee\u4e0d\u4ec5\u80fd\u8dd1\u8d77\u6765\uff0c\u4e5f\u80fd\u88ab\u6e05\u695a\u5730\u5c55\u793a\u51fa\u6765\u3002',
+    '\u8fd9\u4efd\u7f51\u7ad9\u5c31\u662f\u8fd9\u79cd\u7ec3\u4e60\uff1a\u628a\u540e\u7aef\u601d\u7ef4\uff0c\u524d\u7aef\u8868\u8fbe\u548c\u4e2a\u4eba\u54c1\u724c\u6c89\u6dc0\u653e\u5230\u540c\u4e00\u4e2a\u53ef\u6301\u7eed\u7ef4\u62a4\u7684\u5de5\u7a0b\u91cc\u3002',
+  ],
+  focusAreas: [
+    'Spring Boot \u4e1a\u52a1\u5f00\u53d1\uff0c\u63a5\u53e3\u8bbe\u8ba1\u4e0e\u6570\u636e\u5efa\u6a21',
+    'React + TypeScript \u7684\u9875\u9762\u7ec4\u7ec7\uff0c\u7ec4\u4ef6\u62c6\u5206\u4e0e\u54cd\u5e94\u5f0f\u5b9e\u73b0',
+    '\u5c06\u9879\u76ee\u601d\u8def\uff0c\u6280\u672f\u4eae\u70b9\u4e0e\u4e2a\u4eba\u5b9a\u4f4d\u8f6c\u5316\u4e3a\u53ef\u88ab\u5feb\u901f\u7406\u89e3\u7684\u5c55\u793a\u9875\u9762',
+  ],
   highlights: [
-    { label: '目标方向', value: 'Java 后端开发 / 全栈进阶' },
-    { label: '站点定位', value: '个人品牌展示与求职入口' },
-    { label: '扩展预留', value: '博客、多语言、深色模式、项目详情页' },
+    {
+      label: '\u65b9\u5411',
+      value:
+        'Java \u540e\u7aef / \u524d\u7aef\u8868\u8fbe / \u9879\u76ee\u6c89\u6dc0',
+    },
+    {
+      label: '\u5f53\u524d',
+      value:
+        '\u6301\u7eed\u5b8c\u5584\u6c42\u804c\u5bfc\u5411\u7684\u4e2a\u4eba\u4f5c\u54c1\u96c6\u4e0e\u4ee3\u8868\u9879\u76ee',
+    },
+    {
+      label: '\u76ee\u6807',
+      value:
+        '\u8ba9\u62db\u8058\u65b9\u80fd\u5feb\u901f\u7406\u89e3\u6211\u7684\u6280\u672f\u7ed3\u6784\u4e0e\u6210\u957f\u901f\u5ea6',
+    },
   ],
   socialLinks: [
     {
-      label: '邮箱',
-      value: 'your-email@example.com',
-      href: 'mailto:your-email@example.com',
+      label: '\u90ae\u7bb1',
+      value: '838184610@qq.com',
+      href: 'mailto:838184610@qq.com',
     },
     {
       label: 'GitHub',
-      value: 'github.com/your-name',
-      href: 'https://github.com/your-name',
+      value: 'github.com/subaru-ye',
+      href: 'https://github.com/subaru-ye',
       external: true,
     },
     {
-      label: 'Gitee',
-      value: 'gitee.com/your-name',
-      href: 'https://gitee.com/your-name',
-      external: true,
-    },
-    {
-      label: '技术社区',
-      value: 'CSDN / 掘金 / 博客园',
-      href: 'https://juejin.cn/',
+      label: '\u4f5c\u54c1\u4ed3\u5e93',
+      value: 'baihua-portfolio',
+      href: 'https://github.com/subaru-ye/baihua-portfolio',
       external: true,
     },
   ],

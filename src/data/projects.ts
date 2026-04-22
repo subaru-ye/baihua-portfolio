@@ -7,52 +7,59 @@ export type Project = {
   techStack: string[]
   role: string
   highlights: string[]
-  repoUrl: string
-  demoUrl: string
+  repoUrl?: string
+  demoUrl?: string
   featured: boolean
 }
 
 export const projects: Project[] = [
   {
-    title: '校园服务平台',
+    title: '\u6821\u56ed\u670d\u52a1\u5e73\u53f0',
     slug: 'campus-service-platform',
     summary:
-      '一个面向校园场景的后端服务项目，用于沉淀用户、活动与内容管理等核心能力。',
+      '\u56f4\u7ed5\u6821\u56ed\u573a\u666f\u68b3\u7406\u7528\u6237\uff0c\u6d3b\u52a8\u4e0e\u5185\u5bb9\u6d41\u7a0b\uff0c\u91cd\u70b9\u8bad\u7ec3\u4e1a\u52a1\u63a5\u53e3\u62c6\u5206\uff0c\u6743\u9650\u8fb9\u754c\u4e0e\u6570\u636e\u7ec4\u7ec7\u65b9\u5f0f\u3002',
     category: 'backend',
-    categoryLabel: '后端项目',
+    categoryLabel: '\u540e\u7aef\u9879\u76ee',
     techStack: ['Java', 'Spring Boot', 'MySQL', 'Redis'],
-    role: '后端开发 / 接口设计与模块拆分',
-    highlights: ['完成核心业务接口设计，并整理出统一的数据返回与异常处理规范。'],
-    repoUrl: 'https://github.com/your-name/campus-service-platform',
-    demoUrl: 'https://github.com/your-name/campus-service-platform',
+    role:
+      '\u8d1f\u8d23\u63a5\u53e3\u8bbe\u8ba1\uff0c\u4e1a\u52a1\u6a21\u5757\u62c6\u5206\u4e0e\u57fa\u7840\u6570\u636e\u6d41\u68b3\u7406\u3002',
+    highlights: [
+      '\u5c06\u6838\u5fc3\u4e1a\u52a1\u6d41\u7a0b\u62c6\u6210\u66f4\u7a33\u5b9a\u7684\u63a5\u53e3\u8fb9\u754c\uff0c\u964d\u4f4e\u540e\u7eed\u529f\u80fd\u6269\u5c55\u65f6\u7684\u8026\u5408\u5ea6\u3002',
+      '\u7edf\u4e00\u6574\u7406\u8fd4\u56de\u7ed3\u6784\u4e0e\u5f02\u5e38\u5904\u7406\u65b9\u5f0f\uff0c\u8ba9\u63a5\u53e3\u5c42\u8868\u73b0\u66f4\u4e00\u81f4\u3002',
+    ],
     featured: true,
   },
   {
-    title: '个人博客前台',
-    slug: 'personal-blog-web',
+    title: '\u4e2a\u4eba\u4f5c\u54c1\u96c6\u7f51\u7ad9',
+    slug: 'baihua-portfolio',
     summary:
-      '使用 React 与 TypeScript 开发的内容展示型前台，用于练习组件拆分、路由组织与响应式布局。',
+      '\u57fa\u4e8e React\u3001TypeScript\u3001Vite \u4e0e Tailwind CSS \u642d\u5efa\u7684\u4e2a\u4eba\u5c55\u793a\u7f51\u7ad9\uff0c\u7528\u4e8e\u5448\u73b0\u7b80\u4ecb\uff0c\u6280\u80fd\uff0c\u9879\u76ee\u4e0e\u8054\u7cfb\u65b9\u5f0f\u3002',
     category: 'frontend',
-    categoryLabel: '前端项目',
-    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS'],
-    role: '前端开发 / 页面结构与视觉实现',
-    highlights: ['建立数据驱动的页面结构，降低后续维护和内容替换成本。'],
-    repoUrl: 'https://github.com/your-name/personal-blog-web',
-    demoUrl: 'https://your-demo-url.example.com',
+    categoryLabel: '\u524d\u7aef\u9879\u76ee',
+    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    role:
+      '\u8d1f\u8d23\u9875\u9762\u7ed3\u6784\uff0c\u89c6\u89c9\u98ce\u683c\uff0c\u52a8\u6548\u8282\u594f\u548c\u6570\u636e\u9a71\u52a8\u7684\u5185\u5bb9\u7ec4\u7ec7\u3002',
+    highlights: [
+      '\u7528\u6570\u636e\u6587\u4ef6\u7edf\u4e00\u7ba1\u7406\u6587\u6848\u4e0e\u9879\u76ee\u5185\u5bb9\uff0c\u964d\u4f4e\u540e\u7eed\u7ef4\u62a4\u6210\u672c\u3002',
+      '\u56f4\u7ed5\u4f5c\u54c1\u96c6\u573a\u666f\u91cd\u505a\u9996\u5c4f\u5c42\u7ea7\u4e0e\u5185\u5bb9\u6d41\uff0c\u800c\u4e0d\u662f\u505c\u7559\u5728\u6a21\u677f\u5f0f\u5361\u7247\u62fc\u63a5\u3002',
+    ],
+    repoUrl: 'https://github.com/subaru-ye/baihua-portfolio',
     featured: true,
   },
   {
-    title: '全栈练手项目',
+    title: '\u5168\u6808\u7ec3\u624b\u9879\u76ee',
     slug: 'fullstack-practice-app',
     summary:
-      '用于串联前后端联调、接口设计、部署流程与基础工程化的一体化练手项目。',
+      '\u7528\u4e8e\u4e32\u8054\u524d\u540e\u7aef\u8054\u8c03\uff0c\u5185\u5bb9\u7ba1\u7406\uff0c\u5217\u8868\u5c55\u793a\u4e0e\u57fa\u7840\u90e8\u7f72\u6d41\u7a0b\u7684\u5168\u6808\u7ec3\u624b\u9879\u76ee\u3002',
     category: 'fullstack',
-    categoryLabel: '全栈项目',
+    categoryLabel: '\u5168\u6808\u9879\u76ee',
     techStack: ['React', 'Java', 'Spring Boot', 'MySQL'],
-    role: '独立开发 / 前后端联调与部署',
-    highlights: ['覆盖从需求拆分、接口约定到部署上线的完整闭环。'],
-    repoUrl: 'https://github.com/your-name/fullstack-practice-app',
-    demoUrl: 'https://your-demo-url.example.com',
+    role:
+      '\u72ec\u7acb\u5b8c\u6210\u524d\u540e\u7aef\u8054\u8c03\uff0c\u57fa\u7840\u90e8\u7f72\u4e0e\u95ee\u9898\u6392\u67e5\u3002',
+    highlights: [
+      '\u8986\u76d6\u4ece\u9700\u6c42\u62c6\u5206\uff0c\u63a5\u53e3\u7ea6\u5b9a\u5230\u8054\u8c03\u843d\u5730\u7684\u5b8c\u6574\u95ed\u73af\u3002',
+      '\u91cd\u70b9\u953b\u70bc\u63a5\u53e3\u6587\u6863\u7ea6\u675f\uff0c\u524d\u540e\u7aef\u534f\u4f5c\u8282\u594f\u548c\u90e8\u7f72\u6d41\u7a0b\u7406\u89e3\u3002',
+    ],
     featured: false,
   },
 ]
