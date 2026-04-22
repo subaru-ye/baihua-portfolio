@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
 
+import { siteContent } from '../data/content'
 import { projects } from '../data/projects'
 
 function Projects() {
+  const { projects: projectsContent } = siteContent
+
   return (
     <section
       id="projects"
@@ -11,17 +14,13 @@ function Projects() {
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <div className="lg:sticky lg:top-28 lg:h-fit">
           <p className="text-[11px] uppercase tracking-[0.42em] text-accent">
-            {'\u4f5c\u54c1'}
+            {projectsContent.label}
           </p>
           <h2 className="font-display mt-4 text-4xl text-foreground sm:text-5xl">
-            {
-              '\u4f18\u79c0\u7684\u4f5c\u54c1\u96c6\uff0c\u5e94\u8be5\u5148\u8bc1\u660e\u5224\u65ad\u529b\uff0c\u518d\u8bc1\u660e\u6280\u672f\u6808\u3002'
-            }
+            {projectsContent.title}
           </h2>
           <p className="mt-6 max-w-md text-base leading-8 text-muted">
-            {
-              '\u8fd9\u91cc\u53ea\u4fdd\u7559\u6700\u80fd\u4ee3\u8868\u5f53\u524d\u80fd\u529b\u7ed3\u6784\u7684\u9879\u76ee\uff1a\u4e00\u4e2a\u504f\u540e\u7aef\u4e1a\u52a1\u5b9e\u8df5\uff0c\u4e00\u4e2a\u504f\u524d\u7aef\u5448\u73b0\uff0c\u4e00\u4e2a\u504f\u5168\u6808\u95ed\u73af\u3002'
-            }
+            {projectsContent.summary}
           </p>
         </div>
 
@@ -47,7 +46,7 @@ function Projects() {
                     </p>
                     {project.featured ? (
                       <span className="text-[11px] uppercase tracking-[0.38em] text-accent">
-                        {'\u7cbe\u9009'}
+                        {projectsContent.featuredLabel}
                       </span>
                     ) : null}
                   </div>
@@ -70,12 +69,10 @@ function Projects() {
                   </div>
 
                   <div className="mt-6 grid gap-2 text-sm leading-7 text-muted sm:grid-cols-[120px_1fr]">
-                    <span className="text-muted">
-                      {'\u8d1f\u8d23\u5185\u5bb9'}
-                    </span>
+                    <span className="text-muted">{projectsContent.roleLabel}</span>
                     <span className="text-foreground/92">{project.role}</span>
                     <span className="text-muted">
-                      {'\u9879\u76ee\u4eae\u70b9'}
+                      {projectsContent.highlightsLabel}
                     </span>
                     <ul className="space-y-1">
                       {project.highlights.map((highlight) => (
@@ -93,7 +90,7 @@ function Projects() {
                           rel="noreferrer"
                           className="inline-flex items-center gap-2 transition hover:text-accent"
                         >
-                          <span>{'\u67e5\u770b\u4ed3\u5e93'}</span>
+                          <span>{projectsContent.repoLinkLabel}</span>
                           <span aria-hidden="true">-&gt;</span>
                         </a>
                       ) : null}
@@ -104,7 +101,7 @@ function Projects() {
                           rel="noreferrer"
                           className="inline-flex items-center gap-2 transition hover:text-accent"
                         >
-                          <span>{'\u5728\u7ebf\u9884\u89c8'}</span>
+                          <span>{projectsContent.previewLinkLabel}</span>
                           <span aria-hidden="true">-&gt;</span>
                         </a>
                       ) : null}

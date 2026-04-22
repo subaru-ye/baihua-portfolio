@@ -25,15 +25,15 @@ export const siteContent = {
   about: {
     label: '\u5173\u4e8e',
     title:
-      '\u505a\u7a33\u5b9a\u7684\u540e\u7aef\u7cfb\u7edf\uff0c\u4e5f\u505a\u6e05\u6670\u7684\u9879\u76ee\u8868\u8fbe\u3002',
+      '围绕 Java 后端、AI 工程化与高并发场景持续打磨实现能力。',
     itemSuffix: '\u9879',
   },
   projects: {
     label: '\u4f5c\u54c1',
     title:
-      '\u4f18\u79c0\u7684\u4f5c\u54c1\u96c6\uff0c\u5e94\u8be5\u5148\u8bc1\u660e\u5224\u65ad\u529b\uff0c\u518d\u8bc1\u660e\u6280\u672f\u6808\u3002',
+      '作品不只展示技术名词，更应该展示我如何把复杂需求落成稳定系统。',
     summary:
-      '\u8fd9\u91cc\u53ea\u4fdd\u7559\u6700\u80fd\u4ee3\u8868\u5f53\u524d\u80fd\u529b\u7ed3\u6784\u7684\u9879\u76ee\uff1a\u4e00\u4e2a\u504f\u540e\u7aef\u4e1a\u52a1\u5b9e\u8df5\uff0c\u4e00\u4e2a\u504f\u524d\u7aef\u5448\u73b0\uff0c\u4e00\u4e2a\u504f\u5168\u6808\u95ed\u73af\u3002',
+      '这里保留两类最能代表当前能力结构的项目：一个偏 AI 网站生成与高并发优化，一个偏图库协同、缓存设计与实时交互。',
     featuredLabel: '\u7cbe\u9009',
     roleLabel: '\u8d1f\u8d23\u5185\u5bb9',
     highlightsLabel: '\u9879\u76ee\u4eae\u70b9',

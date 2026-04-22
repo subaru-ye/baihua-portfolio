@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 
+import { siteContent } from '../data/content'
 import { profile } from '../data/profile'
 import { skillGroups } from '../data/skills'
 
 function About() {
+  const { about } = siteContent
+
   return (
     <section
       id="about"
@@ -12,12 +15,10 @@ function About() {
       <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28 lg:h-fit">
           <p className="text-[11px] uppercase tracking-[0.42em] text-accent">
-            {'\u5173\u4e8e'}
+            {about.label}
           </p>
           <h2 className="font-display mt-4 text-4xl text-foreground sm:text-5xl">
-            {
-              '\u505a\u7a33\u5b9a\u7684\u540e\u7aef\u7cfb\u7edf\uff0c\u4e5f\u505a\u6e05\u6670\u7684\u9879\u76ee\u8868\u8fbe\u3002'
-            }
+            {about.title}
           </h2>
           <div className="mt-8 space-y-5 text-base leading-8 text-muted">
             {profile.bio.map((paragraph) => (
@@ -48,7 +49,7 @@ function About() {
                     {group.category}
                   </p>
                   <p className="mt-2 text-xs uppercase tracking-[0.35em] text-muted">
-                    {group.items.length} {'\u9879'}
+                    {group.items.length} {about.itemSuffix}
                   </p>
                 </div>
 

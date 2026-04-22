@@ -1,46 +1,42 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-
-const navItems = [
-  { label: '\u9996\u9875', href: '#home' },
-  { label: '\u5173\u4e8e\u6211', href: '#about' },
-  { label: '\u4f5c\u54c1', href: '#projects' },
-  { label: '\u8054\u7cfb', href: '#contact' },
-]
+import { siteContent } from '../data/content'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { header } = siteContent
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#home" className="flex items-baseline gap-3">
-          <span className="font-display text-xl text-foreground">
-            {'\u767d\u6866'}
-          </span>
+          <span className="font-display text-xl text-foreground">{header.brandName}</span>
           <span className="text-[10px] uppercase tracking-[0.42em] text-muted">
-            Baihua Portfolio
+            {header.brandSubline}
           </span>
         </a>
 
         <nav
-          className="hidden items-center gap-8 md:flex"
-          aria-label={'\u4e3b\u5bfc\u822a'}
+          className="hidden items-center gap-7 md:flex"
+          aria-label={header.navAriaLabel}
         >
-          {navItems.map((item) => (
+          {header.navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted transition hover:text-foreground"
+              className="relative text-sm text-muted transition hover:text-foreground after:absolute after:-bottom-3 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-[width] hover:after:w-full"
             >
               {item.label}
             </a>
           ))}
+
+          <span className="h-5 w-px bg-line/80" aria-hidden="true" />
+
           <a
             href="#contact"
-            className="rounded-full border border-line px-4 py-2 text-sm text-foreground transition hover:border-accent hover:text-accent"
+            className="rounded-full border border-line bg-white/[0.02] px-5 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:bg-accent/10 hover:text-accent"
           >
-            {'\u53d1\u8d77\u8054\u7cfb'}
+            {header.contactCta}
           </a>
         </nav>
 
@@ -52,7 +48,7 @@ function Header() {
           onClick={() => setIsMenuOpen((current) => !current)}
         >
           <span>
-            {isMenuOpen ? '\u5173\u95ed' : '\u83dc\u5355'}
+            {isMenuOpen ? header.closeMenuLabel : header.openMenuLabel}
           </span>
         </button>
       </div>
@@ -62,14 +58,14 @@ function Header() {
           <motion.nav
             id="mobile-navigation"
             className="border-t border-line/70 bg-ink/95 px-4 py-4 md:hidden"
-            aria-label={'\u79fb\u52a8\u7aef\u4e3b\u5bfc\u822a'}
+            aria-label={header.mobileNavAriaLabel}
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
           >
             <div className="mx-auto flex max-w-[1400px] flex-col gap-2">
-              {navItems.map((item) => (
+              {header.navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -79,6 +75,14 @@ function Header() {
                   {item.label}
                 </a>
               ))}
+
+              <a
+                href="#contact"
+                className="mt-2 rounded-2xl border border-line bg-white/[0.03] px-3 py-3 text-sm text-foreground transition hover:border-accent hover:text-accent"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {header.contactCta}
+              </a>
             </div>
           </motion.nav>
         ) : null}

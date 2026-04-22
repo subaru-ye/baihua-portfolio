@@ -1,11 +1,13 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+import { siteContent } from '../data/content'
 import { profile } from '../data/profile'
 
 function Hero() {
   const { scrollY } = useScroll()
   const orbY = useTransform(scrollY, [0, 500], [0, 120])
   const orbitRotate = useTransform(scrollY, [0, 800], [0, 24])
+  const { hero } = siteContent
 
   return (
     <section
@@ -32,7 +34,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
           >
-            {'\u767d\u6866'} · Java {'\u540e\u7aef\u5f00\u53d1'}
+            {profile.name} · Java {hero.roleLabel}
           </motion.p>
 
           <motion.h1
@@ -72,13 +74,13 @@ function Hero() {
               href="#projects"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink transition hover:bg-accent-strong"
             >
-              {'\u67e5\u770b\u4f5c\u54c1'}
+              {hero.primaryCta}
             </a>
             <a
               href="#about"
               className="rounded-full border border-line px-6 py-3 text-sm text-foreground transition hover:border-accent hover:text-accent"
             >
-              {'\u4e86\u89e3\u6211'}
+              {hero.secondaryCta}
             </a>
           </motion.div>
 
@@ -115,7 +117,7 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.28, ease: 'easeOut' }}
           >
             <p className="text-[11px] uppercase tracking-[0.4em] text-muted">
-              {'\u5f53\u524d\u5173\u6ce8'}
+              {hero.focusTitle}
             </p>
             <div className="mt-5 space-y-5">
               {profile.focusAreas.map((item, index) => (
@@ -138,15 +140,13 @@ function Hero() {
             transition={{ duration: 0.55, delay: 0.4, ease: 'easeOut' }}
           >
             <p className="text-[11px] uppercase tracking-[0.38em] text-muted">
-              {'\u4e2a\u4eba\u5b9a\u4f4d'}
+              {hero.positioningTitle}
             </p>
             <p className="mt-3 text-lg leading-8 text-foreground">
               {profile.role}
             </p>
             <p className="mt-3 text-sm leading-7 text-muted">
-              {
-                '\u6211\u5e0c\u671b\u7528\u7a33\u5b9a\u7684\u540e\u7aef\u601d\u7ef4\u505a\u5b9e\u73b0\uff0c\u4e5f\u7528\u6e05\u6670\u7684\u524d\u7aef\u8868\u8fbe\u53bb\u8bb2\u6e05\u695a\u9879\u76ee\u4ef7\u503c\u3002'
-              }
+              {hero.positioningDescription}
             </p>
           </motion.div>
         </div>

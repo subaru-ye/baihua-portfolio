@@ -14,52 +14,54 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: '\u6821\u56ed\u670d\u52a1\u5e73\u53f0',
-    slug: 'campus-service-platform',
+    title: '白桦网站秒搭',
+    slug: 'ye-ai-web-factory',
     summary:
-      '\u56f4\u7ed5\u6821\u56ed\u573a\u666f\u68b3\u7406\u7528\u6237\uff0c\u6d3b\u52a8\u4e0e\u5185\u5bb9\u6d41\u7a0b\uff0c\u91cd\u70b9\u8bad\u7ec3\u4e1a\u52a1\u63a5\u53e3\u62c6\u5206\uff0c\u6743\u9650\u8fb9\u754c\u4e0e\u6570\u636e\u7ec4\u7ec7\u65b9\u5f0f\u3002',
+      '基于 Spring Boot + LangChain4j 的 AI 网站生成平台，支持用户通过自然语言实时生成可运行的网站工程，并提供流式生成、一键部署与代码下载能力。',
     category: 'backend',
     categoryLabel: '\u540e\u7aef\u9879\u76ee',
-    techStack: ['Java', 'Spring Boot', 'MySQL', 'Redis'],
-    role:
-      '\u8d1f\u8d23\u63a5\u53e3\u8bbe\u8ba1\uff0c\u4e1a\u52a1\u6a21\u5757\u62c6\u5206\u4e0e\u57fa\u7840\u6570\u636e\u6d41\u68b3\u7406\u3002',
-    highlights: [
-      '\u5c06\u6838\u5fc3\u4e1a\u52a1\u6d41\u7a0b\u62c6\u6210\u66f4\u7a33\u5b9a\u7684\u63a5\u53e3\u8fb9\u754c\uff0c\u964d\u4f4e\u540e\u7eed\u529f\u80fd\u6269\u5c55\u65f6\u7684\u8026\u5408\u5ea6\u3002',
-      '\u7edf\u4e00\u6574\u7406\u8fd4\u56de\u7ed3\u6784\u4e0e\u5f02\u5e38\u5904\u7406\u65b9\u5f0f\uff0c\u8ba9\u63a5\u53e3\u5c42\u8868\u73b0\u66f4\u4e00\u81f4\u3002',
+    techStack: [
+      'Java',
+      'Spring Boot',
+      'LangChain4j',
+      'Redis',
+      'Nacos',
+      'SSE',
     ],
+    role:
+      '负责 AI 生成链路设计、生成模式解耦、对话上下文管理、安全护轨与性能优化。',
+    highlights: [
+      '基于声明式 AI Service 与精细化 Prompt 工程实现从自然语言到可运行网站工程的生成流程。',
+      '针对对话历史查询采用游标分页替代传统 offset 分页，将深分页复杂度从 O(n) 降到 O(1)，实现毫秒级稳定加载。',
+      '利用 Nacos 实现敏感词与注入规则热更新，并结合 TokenStream + SSE 支持前端实时渲染 AI 生成过程。',
+    ],
+    repoUrl: 'https://github.com/subaru-ye/ye-ai-web-factory',
     featured: true,
   },
   {
-    title: '\u4e2a\u4eba\u4f5c\u54c1\u96c6\u7f51\u7ad9',
-    slug: 'baihua-portfolio',
+    title: '白桦图享工坊',
+    slug: 'ye-picture',
     summary:
-      '\u57fa\u4e8e React\u3001TypeScript\u3001Vite \u4e0e Tailwind CSS \u642d\u5efa\u7684\u4e2a\u4eba\u5c55\u793a\u7f51\u7ad9\uff0c\u7528\u4e8e\u5448\u73b0\u7b80\u4ecb\uff0c\u6280\u80fd\uff0c\u9879\u76ee\u4e0e\u8054\u7cfb\u65b9\u5f0f\u3002',
-    category: 'frontend',
-    categoryLabel: '\u524d\u7aef\u9879\u76ee',
-    techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion'],
-    role:
-      '\u8d1f\u8d23\u9875\u9762\u7ed3\u6784\uff0c\u89c6\u89c9\u98ce\u683c\uff0c\u52a8\u6548\u8282\u594f\u548c\u6570\u636e\u9a71\u52a8\u7684\u5185\u5bb9\u7ec4\u7ec7\u3002',
-    highlights: [
-      '\u7528\u6570\u636e\u6587\u4ef6\u7edf\u4e00\u7ba1\u7406\u6587\u6848\u4e0e\u9879\u76ee\u5185\u5bb9\uff0c\u964d\u4f4e\u540e\u7eed\u7ef4\u62a4\u6210\u672c\u3002',
-      '\u56f4\u7ed5\u4f5c\u54c1\u96c6\u573a\u666f\u91cd\u505a\u9996\u5c4f\u5c42\u7ea7\u4e0e\u5185\u5bb9\u6d41\uff0c\u800c\u4e0d\u662f\u505c\u7559\u5728\u6a21\u677f\u5f0f\u5361\u7247\u62fc\u63a5\u3002',
-    ],
-    repoUrl: 'https://github.com/subaru-ye/baihua-portfolio',
-    featured: true,
-  },
-  {
-    title: '\u5168\u6808\u7ec3\u624b\u9879\u76ee',
-    slug: 'fullstack-practice-app',
-    summary:
-      '\u7528\u4e8e\u4e32\u8054\u524d\u540e\u7aef\u8054\u8c03\uff0c\u5185\u5bb9\u7ba1\u7406\uff0c\u5217\u8868\u5c55\u793a\u4e0e\u57fa\u7840\u90e8\u7f72\u6d41\u7a0b\u7684\u5168\u6808\u7ec3\u624b\u9879\u76ee\u3002',
+      '基于 Spring Boot + Vue 的云端图库协作系统，结合腾讯云 COS 与 WebSocket，支持图片上传、多维检索、AI 标注、私有空间管理与团队协同编辑。',
     category: 'fullstack',
     categoryLabel: '\u5168\u6808\u9879\u76ee',
-    techStack: ['React', 'Java', 'Spring Boot', 'MySQL'],
-    role:
-      '\u72ec\u7acb\u5b8c\u6210\u524d\u540e\u7aef\u8054\u8c03\uff0c\u57fa\u7840\u90e8\u7f72\u4e0e\u95ee\u9898\u6392\u67e5\u3002',
-    highlights: [
-      '\u8986\u76d6\u4ece\u9700\u6c42\u62c6\u5206\uff0c\u63a5\u53e3\u7ea6\u5b9a\u5230\u8054\u8c03\u843d\u5730\u7684\u5b8c\u6574\u95ed\u73af\u3002',
-      '\u91cd\u70b9\u953b\u70bc\u63a5\u53e3\u6587\u6863\u7ea6\u675f\uff0c\u524d\u540e\u7aef\u534f\u4f5c\u8282\u594f\u548c\u90e8\u7f72\u6d41\u7a0b\u7406\u89e3\u3002',
+    techStack: [
+      'Spring Boot',
+      'Vue',
+      'COS',
+      'WebSocket',
+      'RabbitMQ',
+      'Redis',
+      'Caffeine',
     ],
-    featured: false,
+    role:
+      '负责资源存储链路、缓存设计、实时协同机制与异步消息可靠性优化。',
+    highlights: [
+      '通过对象存储承接海量图片资源，并实现上传自动压缩与缩略图生成，降低带宽成本并提升首屏加载速度。',
+      '围绕热点图库高并发读场景引入 Caffeine + Redis 多级缓存，命中率提升至 99.9%，平均响应时间降至 50ms 以内。',
+      '基于 WebSocket 实现多端毫秒级同步与冲突规避，并通过 RabbitMQ 死信队列与邮件降级机制提升消息可靠性。',
+    ],
+    repoUrl: 'https://github.com/subaru-ye/ye-picture',
+    featured: true,
   },
 ]
