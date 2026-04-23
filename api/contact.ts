@@ -3,7 +3,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node'
 import {
   type ContactResponse,
   handleContactRequest,
-} from '../server/contact-service'
+} from './_lib/contact-service.js'
 
 function sendJson(
   response: VercelResponse,

@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-import { handleContactRequest } from './server/contact-service'
+import { handleContactRequest } from './api/_lib/contact-service.js'
 
 async function readJsonBody(request: IncomingMessage) {
   const chunks: Buffer[] = []
