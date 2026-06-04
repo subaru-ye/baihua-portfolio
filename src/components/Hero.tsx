@@ -14,7 +14,6 @@ function Hero() {
       id="home"
       className="relative isolate overflow-hidden border-b border-line/70"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(64,194,255,0.16),transparent_34%),radial-gradient(circle_at_78%_24%,rgba(64,194,255,0.09),transparent_22%),linear-gradient(180deg,#080909_0%,#050505_100%)]" />
       <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:82px_82px]" />
 
       <motion.div

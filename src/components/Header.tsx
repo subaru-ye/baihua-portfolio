@@ -7,7 +7,7 @@ function Header() {
   const { header } = siteContent
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-line/70 bg-[rgba(6,7,8,0.88)] backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a href="#home" className="flex items-baseline gap-3">
           <span className="font-display text-xl text-foreground">{header.brandName}</span>
@@ -34,7 +34,7 @@ function Header() {
 
           <a
             href="#contact"
-            className="rounded-full border border-line bg-white/[0.02] px-5 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:bg-accent/10 hover:text-accent"
+            className="rounded-full border border-line bg-[rgba(255,255,255,0.035)] px-5 py-2 text-sm font-medium text-foreground transition hover:border-accent hover:bg-[rgba(102,217,255,0.1)] hover:text-accent"
           >
             {header.contactCta}
           </a>
@@ -57,7 +57,7 @@ function Header() {
         {isMenuOpen ? (
           <motion.nav
             id="mobile-navigation"
-            className="border-t border-line/70 bg-ink/95 px-4 py-4 md:hidden"
+            className="border-t border-line/70 bg-[rgba(6,7,8,0.96)] px-4 py-4 md:hidden"
             aria-label={header.mobileNavAriaLabel}
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-2xl px-3 py-3 text-sm text-muted transition hover:bg-white/5 hover:text-foreground"
+                  className="rounded-2xl px-3 py-3 text-sm text-muted transition hover:bg-[rgba(255,255,255,0.05)] hover:text-foreground"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -78,7 +78,7 @@ function Header() {
 
               <a
                 href="#contact"
-                className="mt-2 rounded-2xl border border-line bg-white/[0.03] px-3 py-3 text-sm text-foreground transition hover:border-accent hover:text-accent"
+                className="mt-2 rounded-2xl border border-line bg-[rgba(255,255,255,0.035)] px-3 py-3 text-sm text-foreground transition hover:border-accent hover:text-accent"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {header.contactCta}

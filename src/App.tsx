@@ -4,18 +4,22 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
+import SiteShaderBackdrop from './components/SiteShaderBackdrop'
 
 function App() {
   return (
-    <div className="min-h-screen bg-ink text-foreground">
+    <div className="relative min-h-screen overflow-x-hidden bg-ink text-foreground">
+      <SiteShaderBackdrop />
       <Header />
-      <main className="relative">
+      <main className="relative z-10">
         <Hero />
         <About />
         <Projects />
         <Contact />
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   )
 }

@@ -111,7 +111,7 @@ function Contact() {
         </motion.div>
 
         <motion.div
-          className="border border-line/70 bg-white/[0.02] p-6 sm:p-8"
+          className="border border-line/70 bg-[rgba(5,13,16,0.78)] p-6 sm:p-8"
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.32 }}
@@ -134,7 +134,7 @@ function Contact() {
                 name="name"
                 required
                 placeholder={contact.companyOrNamePlaceholder}
-                className="border border-line/80 bg-black/20 px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
+                className="border border-line/80 bg-[rgba(0,10,12,0.44)] px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
               />
             </label>
 
@@ -145,7 +145,7 @@ function Contact() {
                 name="email"
                 required
                 placeholder={contact.emailPlaceholder}
-                className="border border-line/80 bg-black/20 px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
+                className="border border-line/80 bg-[rgba(0,10,12,0.44)] px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
               />
             </label>
 
@@ -156,7 +156,7 @@ function Contact() {
                 required
                 rows={6}
                 placeholder={contact.messagePlaceholder}
-                className="border border-line/80 bg-black/20 px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
+                className="border border-line/80 bg-[rgba(0,10,12,0.44)] px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent"
               />
             </label>
 
