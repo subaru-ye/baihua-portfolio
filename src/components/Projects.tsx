@@ -9,7 +9,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="border-y border-line/70 bg-[rgba(4,14,17,0.62)] py-24"
+      className="border-y border-line/70 py-24"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8">
         <div className="lg:sticky lg:top-28 lg:h-fit">

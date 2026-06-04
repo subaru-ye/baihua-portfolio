@@ -27,3 +27,12 @@
 - Adds `u_mouse_velocity` to make mouse movement create a subtle wake and brighter disturbed flow.
 - Preserves the cyan/blue palette and explicit cold `rgba()` surfaces to avoid Edge color-shift issues.
 - Still uses a single-pass shader with no new dependencies; framebuffer-based fluid simulation is reserved for a later v3.1/v4.0 direction.
+
+## v4.0 - Feedback Light Field
+
+- Keeps the global raw WebGL canvas and cyan/blue technical direction.
+- Adds ping-pong framebuffer feedback so the previous frame contributes to the next frame.
+- Mouse movement now creates a softer persistent wake, with light trails diffusing through the smoke instead of disappearing immediately.
+- Adds a separate display pass for final tone control while preserving the static fallback path.
+- Animation availability now reacts to reduced-motion, pointer, and narrow viewport media-query changes instead of only checking once on mount.
+- Still no new runtime dependencies; the `cursor-spotlight-ui` skill remains unchanged until this version stabilizes.
